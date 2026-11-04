@@ -12,6 +12,7 @@ import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+//TO DO ADD NEW PAGES TO THIS 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
 const SiteHeader = () => {
@@ -23,11 +24,16 @@ const SiteHeader = () => {
   
   const navigate = useNavigate();
 
+  //ADD PATH LATER....
   const menuOptions = [
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Option 4", path: "/" },
+    { label: "Trending", path: "/" },
+    { label: "Top Rated", path: "/" },
+    { label: "Popular", path: "/" },
+
+
   ];
 
   const handleMenuSelect = (pageURL) => {
