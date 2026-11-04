@@ -11,6 +11,12 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 
+//ADDITION 
+//imporintg new pages to extend the web app 
+import TopRatedPage from "./pages/topRatedPage";
+import PopularMoviesPage from "./pages/popularMovies";
+import TrendingTodayPage from "./pages/trendingToday";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,14 +38,24 @@ const App = () => {
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
             <Route path="/movies/upcoming" element={<UpcomingPage />} />
             <Route path="/reviews/:id" element={<MovieReviewPage />} />
-            <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
+            <Route path="/reviews/form" element={<AddMovieReviewPage />} />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />
+
+            {/* New Static Routes */}
+            <Route path="/top-rated" element={<TopRatedPage />} />
+            <Route path="/popular" element={<PopularMoviesPage />} />
+            <Route path="/trending" element={<TrendingTodayPage />} />
+
+            {/* New Parameterised Routes pointing to Movie Details Page */}
+            <Route path="/movie/:id/credits" element={<MovieDetailsPage />} />
+            <Route path="/movie/:id/recommendations" element={<MovieDetailsPage />} />
+
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
-      <ReactQueryDevtools initialIsOpen={false} />
+      <ReactQueryDevtools initialIsOpen={false}  />
     </QueryClientProvider>
   );
 };
