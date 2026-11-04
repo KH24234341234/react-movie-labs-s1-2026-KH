@@ -44,10 +44,10 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />
 
-            {/* New Static Routes */}
-            <Route path="/top-rated" element={<TopRatedPage />} />
-            <Route path="/popular" element={<PopularMoviesPage />} />
-            <Route path="/trending" element={<TrendingTodayPage />} />
+            {/* New Static Routes (ERROR I HAD IMPROPER PATH AHHH) */}
+            <Route path="/movies/top-rated" element={<TopRatedPage />} />
+            <Route path="/movies/popular" element={<PopularMoviesPage />} />
+            <Route path="/movies/trending" element={<TrendingTodayPage />} />
 
             {/* New Parameterised Routes pointing to Movie Details Page */}
             <Route path="/movie/:id/credits" element={<MovieDetailsPage />} />
