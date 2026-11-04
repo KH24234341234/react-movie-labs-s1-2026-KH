@@ -135,3 +135,17 @@ export const getMovieRecommendations = (movieId) => {
       throw error;
     });
 };
+
+//imports for the additions that will be rendered within the movie details page
+export const getMovieCredits = (movieId) => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
+  )
+    .then((response) => {
+      if (!response.ok) throw new Error(response.statusText);
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
