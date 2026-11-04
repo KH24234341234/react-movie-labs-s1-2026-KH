@@ -9,13 +9,14 @@ import SiteHeader from "./components/siteHeader";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import MoviesContextProvider from "./contexts/moviesContext";
-import AddMovieReviewPage from './pages/addMovieReviewPage'
+import AddMovieReviewPage from './pages/addMovieReviewPage';
+import MovieDetailsPage from "./pages/movieDetailsPage";
 
 //ADDITION 
 //imporintg new pages to extend the web app 
 import TopRatedPage from "./pages/topRatedPage";
 import PopularMoviesPage from "./pages/popularMovies";
-import TrendingTodayPage from "./pages/trendingToday";
+import TrendingTodayPage from "./pages/trendingToday"
 
 
 const queryClient = new QueryClient({

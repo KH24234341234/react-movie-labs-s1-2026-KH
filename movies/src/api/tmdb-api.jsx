@@ -95,3 +95,43 @@ export const getMovieReviews = ({ queryKey }) => {
   });
 };
 
+//NEW IMPORTS TO USE GRAB NEW INFO FROM API BASICALLY THE SAME AS ABOVE......
+export const getTopRatedMovies = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
+  ).then((response) => {
+    if (!response.ok) throw new Error("Failed to fetch top rated movies");
+    return response.json();
+  });
+};
+
+export const getPopularMovies = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
+  ).then((response) => {
+    if (!response.ok) throw new Error("Failed to fetch popular movies");
+    return response.json();
+  });
+};
+
+export const getTrendingMovies = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=${import.meta.env.VITE_TMDB_KEY}`
+  ).then((response) => {
+    if (!response.ok) throw new Error("Failed to fetch trending movies");
+    return response.json();
+  });
+};
+
+export const getMovieRecommendations = (movieId) => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
+  )
+    .then((response) => {
+      if (!response.ok) throw new Error(response.statusText);
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
