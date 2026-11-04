@@ -5,8 +5,11 @@ import { getMovie } from '../api/tmdb-api'
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
 
+//going to try to use the location as a way to specify what bits to render
+
 const MoviePage = (props) => {
   const { id } = useParams();
+  const location = useLocation();
 
   const { data: movie, error, isPending, isError  } = useQuery({
     queryKey: ['movie', {id: id}],
